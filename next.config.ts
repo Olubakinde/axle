@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: 'liveblocks.io',
-        post: ''
+        port: ''
       }
     ]
   }
