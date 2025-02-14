@@ -18,10 +18,10 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
     (Array.isArray(value) && value.some((val) => val?.value === activeElement?.value));
 
   return (
-    <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
-      <Image src="/assets/logo.svg" alt="FigPro Logo" width={58} height={20} />
+    <nav className="flex select-none items-center justify-between gap-4 bg-primary-white px-5 text-white">
+      <Image src="/assets/logo.svg" alt="FigPro Logo" width={100} height={40} />
 
-      <ul className="flex flex-row">
+      <ul className="flex flex-row border-2 border-black rounded-[15px] p-0 top-3">
         {navElements.map((item: ActiveElement | any) => (
           <li
             key={item.name}
@@ -30,7 +30,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
               handleActiveElement(item);
             }}
             className={`group px-2.5 py-5 flex justify-center items-center
-            ${isActive(item.value) ? "bg-primary-green" : "hover:bg-primary-grey-200"}
+            ${isActive(item.value) ? "bg-primary-green rounded-[15px]" : "hover:bg-primary-grey-200 rounded-[15px]"}
             `}
           >
             {/* If value is an array means it's a nav element with sub options i.e., dropdown */}
@@ -60,7 +60,7 @@ const Navbar = ({ activeElement, imageInputRef, handleImageUpload, handleActiveE
                   src={item.icon}
                   alt={item.name}
                   fill
-                  className={isActive(item.value) ? "invert" : ""}
+                  className="filter invert brightness-0 sepia-100 saturate-100 hue-rotate-[0deg] brightness-50"
                 />
               </Button>
             )}
