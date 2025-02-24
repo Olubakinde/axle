@@ -65,6 +65,7 @@ export default function Page() {
     if (!canvasObjects || canvasObjects.size === 0) return true;
 
     // delete all the shapes from the store
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     for (const [key, value] of canvasObjects.entries()) {
       canvasObjects.delete(key);
     }
@@ -176,7 +177,7 @@ export default function Page() {
     });
 
     window.addEventListener("resize", () => {
-      handleResize({ fabricRef })
+      handleResize({ canvas: fabricRef.current })
     })
 
     window.addEventListener("keydown", (e) => {
